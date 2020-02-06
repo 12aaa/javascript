@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #333;
+    }
+    .box{
+        background-color: green;
+    }
+    </style>
+    <script>
+    function togreen(){
+        var box=document.getElementById('box')
+        box.className='box'
+    }
+    function tored(){
+        var box=document.getElementById('box')
+        box.style.background='red'
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="变绿" onclick="togreen()"/>
+    <input type="button" value="变红" onclick="tored()"/>
+    <div id="box"></div>
+</body>
+</html>

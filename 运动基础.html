@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: absolute;
+        left: 0;
+        top: 50px;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var timer=null
+        var obtn=document.getElementById('btn')
+        obtn.onclick=function(){
+            starmove()
+        }
+        function starmove(){
+            clearInterval(timer)
+           timer=setInterval(function(){
+               var speed=10
+               var obox=document.getElementById('box')
+               if(obox.offsetLeft>=300)
+               {
+                   clearInterval(timer)
+               }
+               else
+               {
+                    obox.style.left=obox.offsetLeft+speed+'px'
+               }
+               
+           },30)
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="开始运动" id="btn">
+    <div id="box"></div>
+</body>
+</html>

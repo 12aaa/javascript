@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #text1{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #333;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var otext=document.getElementById('text')
+        var otext1=document.getElementById('text1')
+        otext.onkeydown=function(e){
+            var e=e||event
+            if(e.keyCode==13){
+            otext1.value+=otext.value+'\n'
+            otext.value='' 
+            }
+            
+        }
+    }
+    </script>
+</head>
+<body>
+    <input id="text" type="text">
+    <input id="text1" type="text">
+    
+</body>
+</html>

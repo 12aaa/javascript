@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        filter: alpha(opacity:30);
+        opacity: 0.3;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var obox=document.getElementById('box')
+        obox.onmouseover=function(){
+            starMove(100)
+        }
+        obox.onmouseout=function(){
+            starMove(30)
+        }
+    }
+    var alpha=30
+    var timer=null
+    function starMove(target){
+        var obox=document.getElementById('box')
+        clearInterval(timer)
+        timer=setInterval(function(){
+            var speed=0
+            if(alpha>target){
+                speed=-10
+            }
+            else
+            {
+                speed=10
+            }
+           if(alpha==target){
+            clearInterval(timer)
+           }
+           else
+           {
+            alpha+=speed
+            obox.style.filter='opacity:"+alpha+"'
+            obox.style.opacity=alpha/100
+           }
+        })
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

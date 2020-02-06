@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    ul{
+        list-style: none;
+    }
+    #box{
+        width: 500px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        margin: 20px auto;
+        
+    }
+    #box ul{
+        width: 1000%;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+    #box ul li{
+        width: 10%;
+        height: 400px;
+        float: left;
+    }
+    #box ul li img{
+        width: 500px;
+        height: 400px;
+    }
+    ol{
+        position: absolute;
+        bottom: 10px;
+        width: 160px;
+        left: 170px;
+
+    }
+    ol li{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-block;
+        background: white;
+        text-align: center;
+        line-height: 1.8em;
+        cursor: pointer;
+        
+    }
+    ol li.active{
+        background:blue;
+        color: white;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var obox=document.getElementById('box')
+        var oul=obox.getElementsByTagName('ul')[0]
+        var pic=oul.getElementsByTagName('li')
+        var btn=obox.getElementsByTagName('ol')[0].getElementsByTagName('li')
+        var now=0
+
+        //手动轮播
+        for(var i=0; i<btn.length; i++)
+        {
+            btn[i].index=i
+            btn[i].onclick=function()
+            {
+                now=this.index
+                tab()
+            }
+
+        }
+        //自动轮播
+        var timer=setInterval(next,2000)
+
+        //当鼠标经过停止，离开继续轮播
+        obox.onmouseover=function(){
+            clearInterval(timer)
+        }
+        obox.onmouseout=function(){
+            timer=setInterval(next,2000)
+        }
+        function next(){
+            now++
+            if(now==btn.length)
+            {
+                now=0
+            }
+            tab()
+        }
+        function tab(){
+            for(var i=0; i<btn.length; i++)
+            {
+                btn[i].className=''
+            }
+            btn[now].className='active'
+            oul.style.left=-now*500+'px'
+        }
+    }
+    </script>
+
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li ><img src="banner1.jpg"></li>
+            <li><img src="banner2.jpg"></li>
+            <li><img src="banner3.jpg"></li>
+            <li><img src="banner4.jpg"></li>
+        </ul>
+        <ol>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ol>
+    </div>
+</body>
+</html>

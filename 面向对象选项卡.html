@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    input{
+        background: white;
+    }
+    #box div{
+        width: 150px;
+        height: 150px;
+        background: #333;
+        display: none;
+        margin-top: 20px;
+    }
+    input.active{
+        background: yellow;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        new TabSwitch('box')
+    }
+    function TabSwitch(id)
+    {
+        var _this=this
+        this.obox=document.getElementById(id)
+        this.obtn=this.obox.getElementsByTagName('input')
+        this.odiv=this.obox.getElementsByTagName('div')
+        for(var i=0; i<this.obtn.length; i++)
+        {
+            this.obtn[i].index=i
+            this.obtn[i].onclick=function()
+            {
+                _this.fnClick(this)
+            }
+        }
+    }
+
+    TabSwitch.prototype.fnClick=function(obtn)
+            {
+                for(var i=0; i<this.obtn.length; i++)
+                {
+                    this.obtn[i].className=''
+                    this.odiv[i].style.display='none'
+                }
+                obtn.className='active'
+                this.odiv[obtn.index].style.display='block'
+            }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input class="active" type="button" value="aaa">
+        <input type="button" value="bbb">
+        <input type="button" value="ccc">
+        <div style="display: block;" >aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+    </div>
+</body>
+</html>

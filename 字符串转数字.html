@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload=function(){
+        var otext1=document.getElementById('text1')
+        var otext2=document.getElementById('text2')
+        var obtn=document.getElementById('btn')
+        obtn.onclick=function(){
+            var n1=parseInt(otext1.value)
+            var n1=parseInt(otext2.value)
+            if(isNaN(n1)){
+                alert('你输出得第一个数字有误')
+            }
+            else if(isNaN(n2)){
+                alert('你输出得第二个数字有误')
+            }else{
+                alert(n1+n2)
+            }
+        }
+    }
+    
+    
+    </script>
+</head>
+<body>
+    <input id="text1" type="text"/>
+    <input id="text2" type="text"/>
+    <input id="btn" type="button" value="结果"/>
+</body>
+</html>

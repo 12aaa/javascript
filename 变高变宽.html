@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+        margin-left: 10px;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var obox=document.getElementById('box')
+        var obox2=document.getElementById('box2')
+            obox.onmouseover=function(){
+            starMove(this,'width',400)
+          }
+            obox.onmouseout=function(){
+            starMove(this,'width',100)
+          }
+           obox2.onmouseover=function(){
+            starMove(this,'height',400)
+          }
+           obox2.onmouseout=function(){
+            starMove(this,'height',100)
+          }
+        }
+       
+    function getStyle(obj,name){
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name]
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[name]
+        }
+    }
+    //var timer=null
+    function starMove(obj,arr,target){
+        clearInterval(obj.timer)
+        obj.timer=setInterval(function(){
+            var cur=parseInt(getStyle(obj,arr))
+            var speed=(target-cur)/6
+            speed=speed>0? Math.ceil(speed):Math.floor(speed)
+            if(cur==target)
+            {
+                clearInterval(obj.timer)
+            }
+            else
+            {
+                obj.style[arr]=cur+speed+'px'
+            }
+        },30)
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+</body>
+</html>

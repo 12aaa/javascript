@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    li{
+        list-style: none;
+    }
+    ul{
+        width: 400px;
+        height: 400px;
+        border: 1px solid #333;
+        margin: 0 auto;
+    }
+    ul li{
+        width: 400px;
+        border-bottom: 1px #333 dashed;
+        opacity: 0;
+        filter: alpha(opacity:0);
+    }
+    </style>
+</head>
+<script>
+window.onload=function(){
+    var otext=document.getElementById('text')
+    var obtn=document.getElementById('btn')
+    var oul=document.getElementsByTagName('ul')[0]
+    
+    obtn.onclick=function(){
+    var ali=document.createElement('li')
+    ali.innerHTML=otext.value
+    if(oul.children.length>0)
+    {
+        oul.insertBefore(ali,oul.children[0])
+    }
+    else
+    {
+        oul.appendChild(ali)
+    }
+    //运动
+    var iheight=ali.offsetHeight
+    ali.style.height='0'
+    starMove(ali,{height:iheight},function(){
+        starMove(ali,{opacity:100})
+    })
+    }
+
+}
+</script>
+<body>
+    <input id="text" type="text" value="">
+    <input id="btn" type="button" value="发布">
+        <ul>
+        </ul>
+</body>
+</html>

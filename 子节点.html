@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var aul=document.getElementById('ul')
+            //alert(aul.childNodes.length)
+            // for(var i=0; i<aul.childNodes.length; i++){
+            //     if(aul.childNodes[i].nodeType==3){
+            //         aul.childNodes[i].style.background='red'
+            //     }else{
+
+            //     }
+                
+            // }
+            //alert(aul.children.length)
+            for(var i=0; i<aul.children.length; i++){
+                    aul.children[i].style.background='red'
+                    
+                }
+                
+            
+        }
+    
+    </script>
+</head>
+<body>
+    <ul id="ul">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

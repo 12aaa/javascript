@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 50px;
+        height: 50px;
+        background: red;
+        position: absolute;
+        top: 50px;
+    }
+    #xian{
+        width: 1px;
+        height: 100px;
+        position: absolute;
+        left: 300px;
+        background: #333;
+    }
+    #xian1{
+        width: 1px;
+        height: 100px;
+        position: absolute;
+        left: 600px;
+        background: #333;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var obtn=document.getElementById('btn')
+        obtn.onclick=function(){
+            starMove(300)
+        }
+    }
+    timer=null
+    function starMove(target){
+        clearInterval(timer)
+        var obox=document.getElementById('box')
+        if(obox.offsetLeft>target)
+        {
+            speed=-7
+        }
+        else{
+            speed=7
+        }
+        timer=setInterval(function(){
+             if(Math.abs(obox.offsetLeft-target)<=7)
+             { 
+                 clearInterval(timer)
+                 obox.style.left=target+'px'
+             }
+             else
+             {
+                 obox.style.left=obox.offsetLeft+speed+'px'
+             }
+        },30)
+    }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="开始运动">
+    <div id="box"></div>
+    <div id="xian"></div>
+    <div id="xian1"></div>
+</body>
+</html>

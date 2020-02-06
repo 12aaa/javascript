@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./move2 .js"></script>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        opacity: 0.3;
+        filter: alpha(opacity: 30;);
+    }
+    
+    </style>
+    <script>
+    window.onload=function(){
+        var obtn=document.getElementById('btn')
+        var obox=document.getElementById('box')
+        obtn.onclick=function(){
+            starMove(obox,{width:101, height:300,opacity:100},)
+        }
+    }
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="开始运动">
+    <div id="box"></div>
+</body>
+</html>

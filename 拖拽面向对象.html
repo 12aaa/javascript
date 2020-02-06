@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: absolute;
+    }
+    #box1{
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        position: absolute;
+    }
+    </style>
+</head>
+<script src="./draw.js"></script>
+<script src="./limatdaw.js"></script>
+<script>
+    window.onload=function(){
+        new Draw('box')
+        new LimitDraw('box1')
+    }
+</script>
+<body>
+    <div id="box">普通拖拽</div>
+    <div id="box1">继承拖拽</div>
+</body>
+</html>

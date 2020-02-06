@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+window.onload=function(){
+    var obtn=document.getElementById('btn')
+    var otext=document.getElementById('text')
+    obtn.onclick=function(){
+        var newchuang=window.open('about:black','_black')
+        newchuang.document.write(otext.value)
+    }
+}
+</script>
+<body>
+    <textarea id="text" cols="40" rows="10" v alue=""></textarea>
+    <input type="button" id="btn" value="运行">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 150px;
+        position: absolute;
+        background: red;
+    }
+    </style>
+    <script>
+    window.onscroll=function(){
+        var obox=document.getElementById('box')
+        var scrollTop=document.documentElement.scrollTop||document.body.scrollTop
+        // obox.style.top=(document.documentElement.clientHeight-obox.offsetHeight)/2
+        //  +scrollTop+'px'
+        starMove(parseInt((document.documentElement.clientHeight-obox.offsetHeight)/2
+         +scrollTop))
+    }
+
+    var timer=null
+    function starMove(target){
+        clearInterval(timer)
+        timer=setInterval(function(){
+            var obox=document.getElementById('box')  
+            var speed=(target-obox.offsetTop)/6
+            speed=speed>0?Math.ceil(speed):Math.floor(speed)
+            
+                obox.style.top=obox.offsetTop+speed+'px'
+            
+        },30)
+    }
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div id="box"></div>
+</body>
+</html>

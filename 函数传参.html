@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: #333;
+    }
+    </style>
+    <script>
+    
+    function setcolor(color){
+        var obox=document.getElementById('box')
+        obox.style.background=color
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="变红" onclick="setcolor('red')"/>
+    <input type="button" value="变绿" onclick="setcolor('green')"/>
+    <input type="button" value="变蓝" onclick="setcolor('blue')"/>
+    <div id="box"></div>
+</body>
+</html>

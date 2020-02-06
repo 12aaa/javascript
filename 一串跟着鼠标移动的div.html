@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 20px;
+        height: 20px;
+        border: 1px solid #555;
+        border-radius: 50%;
+        position: absolute;
+    }
+    </style>
+    <script>
+    function getPos(e){
+        var e=e||event
+        var scrollTop=document.documentElement.scrollTop||document.body.scrollTop
+        var scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft
+        return {x:e.clientX+scrollLeft,y:e.clientY+scrollTop}
+    }
+    window.onload=function(){
+        document.onmousemove=function(e){
+        var e=e||event
+        var oDiv=document.getElementsByTagName('div')
+        var pos=getPos(e)
+
+        for(var i=oDiv.length-1; i>0; i--){
+            oDiv[i].style.left=oDiv[i-1].offsetLeft+'px'
+            oDiv[i].style.top=oDiv[i-1].offsetTop+'px'
+        }
+        oDiv[0].style.left=pos.x+'px'
+        oDiv[0].style.top=pos.y+'px'
+        }
+        
+    }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

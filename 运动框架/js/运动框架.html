@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./move.js"></script>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        opacity: 0.3;
+        filter: alpha(opacity:30);
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var obox=document.getElementById('box')
+        obox.onmouseover=function(){
+            starMove(obox,400,'width',function(){
+                starMove(obox,400,'height',function(){
+                    starMove(obox,100,'opacity')
+                })
+            })
+        }
+        obox.onmouseout=function(){
+            starMove(obox,30,'opacity',function(){
+                starMove(obox,100,'height',function(){
+                    starMove(obox,100,'width')
+                })
+            })
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+</html>

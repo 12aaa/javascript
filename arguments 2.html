@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function css(obj,name,value){
+        for(var i=0; i<arguments.length; i++){
+            if(arguments.length==2){
+                return obj.style[name]
+            }
+            else
+            {
+                obj.style[name]=value
+            }
+        }
+    }
+    window.onload=function(){
+         var obox=document.getElementById('box')
+         //alert(css(obox,'width'))
+        css(obox,'background', 'yellow')
+    }
+    </script>
+</head>
+<body>
+    <div id="box" style="width: 100px;height: 100px;background: red;"></div>
+</body>
+</html>

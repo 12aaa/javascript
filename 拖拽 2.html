@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    #box2{
+        width: 400px;
+        height: 400px;
+        background: #ccc;
+        position: relative;
+    }
+
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var obox=document.getElementById('box')
+        var obox2=document.getElementById('box2')
+        var disX=0
+        var disY=0
+        obox.onmousedown=function(e)
+        {
+            var e=e||event
+            disX=e.clientX-obox.offsetLeft
+            disY=e.clientY-obox.offsetTop
+
+
+            document.onmousemove=function(e)
+            {
+            var e=e||event
+            
+            var l=e.clientX-disX
+            var t=e.clientY-disY
+
+            if(l<0)
+            {
+               l=0
+            }
+            else if(l>box2.offsetWidth-obox.offsetWidth)
+            {
+                l=box2.offsetWidth-obox.offsetWidth
+            }
+            if(t<0)
+            {
+                t=0
+            }
+            else if(t>box2.offsetHeight-obox.offsetHeight)
+            {
+                t=box2.offsetHeight-obox.offsetHeight
+            }
+            obox.style.left=l+'px'
+            obox.style.top=t+'px'
+            }
+            document.onmouseup=function(){
+                this.onmousemove=null
+                this.onmouseup=null
+            }
+            return false
+        }
+    }        
+    
+    </script>
+</head>
+<body>
+    <div id="box2">afcbakdvnsldi
+      <div id="box"></div>  
+    </div>
+    
+</body>
+</html>

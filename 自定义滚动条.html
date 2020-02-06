@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #parent{
+        width: 600px;
+        height: 20px;
+        background: #ccc;
+        position: relative;
+        margin: 20px auto;
+    }
+    #box{
+        width: 20px;
+        height: 20px;
+        background: red;
+        position: absolute;
+    }
+    #box1{
+        width: 0;
+        height: 0;
+        background: green;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var obox=document.getElementById('box')
+        var obox1=document.getElementById('box1')
+        var oparent=document.getElementById('parent')
+        var disX=0
+        obox.onmousedown=function(e)
+        {
+            var e=e||event
+            disX=e.clientX-obox.offsetLeft
+
+
+            document.onmousemove=function(e)
+            {
+            var e=e||event
+            
+            var l=e.clientX-disX
+
+            if(l<0)
+            {
+               l=0
+            }
+            else if(l>oparent.offsetWidth-obox.offsetWidth)
+            {
+                l=oparent.offsetWidth-obox.offsetWidth
+            }
+            obox.style.left=l+'px'
+            var scall=l/(oparent.offsetWidth-obox.offsetWidth)
+            obox1.style.width=400*scall+'px'
+            obox1.style.height=400*scall+'px'
+            //document.title=l/580
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null
+                document.onmouseup=null
+            }
+            
+            return false
+        }
+    }        
+    
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <div id="box"></div>
+    </div>
+    <div id="box1"></div>
+</body>
+</html>

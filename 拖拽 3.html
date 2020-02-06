@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    #box2{
+        width: 400px;
+        height: 400px;
+        background: #ccc;
+        position: relative;
+    }
+
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var obox=document.getElementById('box')
+        var disX=0
+        var disY=0
+        obox.onmousedown=function(e)
+        {
+            var e=e||event
+            disX=e.clientX-obox.offsetLeft
+            disY=e.clientY-obox.offsetTop
+
+
+            obox.onmousemove=function(e)
+            {
+            var e=e||event
+            
+            var l=e.clientX-disX
+            var t=e.clientY-disY
+
+            obox.style.left=l+'px'
+            obox.style.top=t+'px'
+            }
+            obox.onmouseup=function(){
+                obox.onmousemove=null
+                obox.onmouseup=null
+                obox.releaseCapture()
+            }
+            obox.setCapture()
+            return false
+        }
+    }        
+    
+    </script>
+</head>
+<body>
+    djvdskvd,svn djvndjvn
+      <div id="box">fdsjv,sdv, nd vbjvkdbv</div>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 150px;
+        height: 200px;
+        background: green;
+        position: absolute;
+        top: 50px;
+        left: -150px;
+    }
+    #box span{
+        width: 20px;
+        height: 70px;
+        background: red;
+        position: absolute;
+        right: -20px;
+        top: 65px;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        
+        var obtn=document.getElementById('btn')
+        
+        obtn.onmouseover=function(){
+            starMove(10,0)
+        }
+        obtn.onmouseout=function(){
+            starMove(-10,-150)
+        }
+    }
+    var timer=null
+    function starMove(speed,itarget){
+        var obox=document.getElementById('box')
+        clearInterval(timer)
+        timer=setInterval(function(){
+             if(obox.offsetLeft==target)
+             {
+                 clearInterval(timer)
+             }
+             else
+             {
+                obox.style.left=obox.offsetLeft+speed+'px' 
+             } 
+         },30)
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <span id="btn">分享到</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+     function getbyclass(oparent, sclass){
+         var aResult=[]
+         var abox=document.getElementsByTagName('*')
+         for(var i=0; i<abox.length; i++){
+             if(abox[i].className==sclass){
+                aResult.push(abox[i])
+             }
+         }
+         return aResult
+     }
+
+
+    window.onload=function(){
+        var aul=document.getElementById('ull')
+        var obox=getbyclass(aul, 'box')
+        for(var i=0; i<obox.length; i++){
+            obox[i].style.background='red'
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    <ul id="ull">
+         <li class="box"></li>
+         <li></li>
+         <li class="box"></li>
+         <li></li>
+         <li></li>
+         <li class="box"></li>
+         <li></li>
+
+    </ul>
+</body>
+</html>

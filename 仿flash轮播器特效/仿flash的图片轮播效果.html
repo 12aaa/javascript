@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/js.js"></script>
+</head>
+<script>
+function getByStyle(oparent,sclass){
+       var aEle=oparent.getElementsByTagName('*')
+       var aresult=[]
+       for(var i=0; i<aEle.length; i++){
+           if(aEle[i].className==sclass){
+             aresult.push(aEle[i])
+           }
+       }
+       return aresult
+}
+window.onload=function(){
+    var oDiv=document.getElementById('playimages')
+    var oprev=getByStyle(oDiv,'prev')[0]
+    var onext=getByStyle(oDiv,'next')[0]
+    var omarkLeft=getByStyle(oDiv,'mark_left')[0]
+    var omarkRight=getByStyle(oDiv,'mark_right')[0]
+
+    var oDiVSmall=getByStyle(oDiv,'small_pic')[0]
+    var oUlSmall=oDiVSmall.getElementsByTagName('ul')[0]
+    var aliSmall=oDiVSmall.getElementsByTagName('li')
+
+    var oUlBig=getByStyle(oDiv,'big_pic')[0]
+    var aliBig=oUlBig.getElementsByTagName('li')
+
+    var nowZIndex=2
+    var now=0
+
+    oUlSmall.style.width=aliSmall.length*aliSmall[0].offsetWidth+'px'
+
+    //左右按钮
+    oprev.onmouseover=omarkLeft.onmouseover=function(){
+        starMove(oprev,100,'opacity')
+    }
+    oprev.onmoseout=omarkLeft.onmouseover=function(){
+        starMove(oprev,0,'opacity')
+    }
+    onext.onmouseover=omarkRight.onmouseover=function(){
+        starMove(onext,100,'opacity')
+    }
+    onext.onmoseout=omarkRight.onmouseover=function(){
+        starMove(onext,0,'opacity')
+    }
+
+   //大图切换
+    for(var i=0; i<aliSmall.length; i++){
+        aliSmall[i].index=i
+        aliSmall[i].onclick=function(){
+            if(this.index==now)return
+            now=this.index
+            tab()
+            
+        }
+        aliSmall[i].onmouseover=function(){
+            starMove(this,100,'opacity')
+        }
+        aliSmall[i].onmouseout=function(){
+            if(this.index!=now)
+            starMove(this,60,'opacity')
+        }
+    }
+
+    function tab(){
+        aliBig[now].style.zIndex=nowZIndex++
+            for(var i=0; i<aliSmall.length; i++){
+                starMove(aliSmall[i],60,'opacity')
+            }
+            starMove(aliSmall[now],100,'opacity')
+            aliBig[now].style.height=0
+            starMove(aliBig[now],320,'height')
+            if(now==0)
+            {
+                starMove(oUlSmall,0,'left')
+            }
+            else if(now==aliSmall.length-1)
+            {
+                starMove(oUlSmall,-(now-2)*aliSmall[0].offsetWidth,'left')
+            }
+            else
+            {
+                starMove(oUlSmall,-(now-1)*aliSmall[0].offsetWidth,'left')
+            }
+            
+    }
+
+    oprev.onclick=function(){
+        now--
+        if(now==-1)
+        {
+            now=aliSmall.length-1
+            
+        }
+        tab()
+
+    }
+
+    onext.onclick=function(){
+        now++
+        if(now==aliSmall.length)
+        {
+            now=0
+            
+        }
+        tab()
+    }
+    var timer=setInterval(onext.onclick,2000)
+    oDiv.onmouseover=function(){
+        clearInterval(timer)
+    }
+    oDiv.onmouseout=function(){
+        timer=setInterval(onext.onclick,2000)
+    }
+}
+
+</script>
+<body>
+<div id="playimages" class="play">
+    <ul class="big_pic">
+        <div class="prev">＜</div>
+        <div class="next">＞</div>
+        <div class="text">加载图片说明..</div>
+        <div class="length">计算数量说明..</div>
+        <a class="mark_left" href="javascript:;"></a>
+        <a class="mark_right" href="javascript:;"></a>
+        <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>
+        <li><img src="images/6.jpg"></li>
+    </ul>
+    <div class="small_pic">
+        <ul style="width: 390px;">
+            <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>
+        <li><img src="images/6.jpg"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

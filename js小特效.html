@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #333;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <input id="chex" type="checkbox" />
+    <div id="box">
+        四季度开始处理封测立即出发
+    </div>
+</body>
+<script>
+    var box=document.getElementById('box')
+    var chex=document.getElementById('chex')
+chex.onmouseover=function show(){
+    
+    box.style.display='block'
+}
+chex.onmouseout=function hid(){
+    
+    box.style.display='none'
+}
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    window.onload=function(){
+        //获取外部样式
+        function getstyle(obj,name){
+            if(obj.currenStyle)
+            {
+                obj.currenStyle[name]
+            }
+            else
+            {
+                getComputedStyle((obj,flase)[name])
+            }
+        }
+       getstyel(obj,name)
+    }
+
+    //获取行间样式
+    function css(obj, name, value){
+        for(var i=0; i<arguments.length; i++){
+            if(arguments==2)
+            {
+                obj.style[name]
+            }
+            else{
+                obj.style[name]=value
+            }
+        }
+
+    }
+    
+    </script>
+</body>
+</html>

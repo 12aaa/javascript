@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload=function(){
+        var otext=document.getElementById('text')
+        otext.onkeydown=function(){
+           var e=e||event
+           //alert(e.keyCode)
+           if(e.keyCode!=8 && e.keyCode<48||e.keyCode>57){
+               return false
+           }
+           
+        }
+    }
+    </script>
+</head>
+<body>
+    <input id="text" type="text">
+</body>
+</html>

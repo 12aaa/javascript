@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    #box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        border: 1px solid green;
+    }
+    </style>
+    <script>
+    function getstyle(obj,name){
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name]
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[name]
+        }
+    }
+    window.onload=function(){
+        var obox=document.getElementById('box')
+        setInterval(function(){
+            obox.style.width=parseInt(getstyle(obox,'width'))-1+'px'
+        },30)
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: #333;
+        border: 1px solid #000;
+        display: none;
+    }
+    .active{
+        background: yellow;
+    }
+    </style>
+    <script>
+    // window.onload=function(){
+    //     var btn=document.getElementsByTagName('input')
+    //     var odiv=document.getElementsByTagName('div')
+    //     for(var i=0; i<btn.length; i++){
+    //         btn[i].index=i
+    //         btn[i].onclick=function(){
+    //             for(var i=0; i<btn.length; i++){
+    //                 btn[i].className=''
+    //                 odiv[i].style.display='none'
+    //             }
+    //             this.className='active'
+    //             odiv[this.index].style.display='block'
+    //         }
+            
+    //     }
+    // }
+    window.onload=function(){
+        var oinput=document.getElementsByTagName('input')
+        var odiv=document.getElementsByTagName('div')
+        for(var i=0; i<oinput.length; i++){
+            oinput[i].index=i
+            oinput[i].onclick=function(){
+                for(var i=0; i<oinput.length; i++){
+                    oinput[i].className=''
+                    odiv[i].style.display='none'
+
+                }
+                this.className='active'
+                odiv[this.index].style.display='block'
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <input class="active" type="button" value="1" >
+    <input type="button" value="2" >
+    <input type="button" value="3" >
+    <input type="button" value="4" >
+    <div style="display: block;">111111</div>
+    <div >222222</div>
+    <div >333333</div>
+    <div >444444</div>
+
+</body>
+</html>

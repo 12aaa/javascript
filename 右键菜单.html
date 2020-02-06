@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    #box{
+        width: 80px;
+        border: 1px solid #333;
+        background: red;
+        color: white;
+        position: absolute;
+        padding-left: 10px;
+        display: none;
+        
+
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var obox=document.getElementById('box')
+        document.oncontextmenu=function(e){
+            var e=e||event
+            var obox=document.getElementById('box')
+            obox.style.display='block'
+            obox.style.left=e.clientX+'px'
+            obox.style.top=e.clientY+'px'
+            return false
+        }
+        document.onclick=function(e){
+            var e=e||event
+            obox.style.display='none'
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>qqq</li>
+            <li>ddd</li>
+            <li>ccc</li>
+            <li>bbb</li>
+            <li>aaa</li>
+        </ul>
+    </div>
+</body>
+</html>

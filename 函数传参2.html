@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: #333;
+    }
+    
+    </style>
+    <script>
+    function set(name,value){
+        var box=document.getElementById('box')
+        box.style [name]=value
+    }
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="变宽" onclick="set('width','200px')"/>
+    <input type="button" value="变高" onclick="set('height','200px')"/>
+    <input type="button" value="变色" onclick="set('background','red')"/>
+    <div id="box"></div>
+</body>
+</html>

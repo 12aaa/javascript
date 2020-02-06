@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link id="ll" rel="stylesheet" href="css1.css"/>
+    <script>
+    function change1(){
+        var ol=document.getElementById('ll')
+        ol.href='css2.css'
+    }
+    function change2(){
+        var ol=document.getElementById('ll')
+        ol.href='css1.css'
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮1" onclick="change1()"/>
+    <input type="button" value="按钮2" onclick="change2()"/>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    #container{
+        width: 400px;
+        height: 500px;
+        background: #595959;
+        margin: 20px auto;
+    }
+    ul{
+        width: 300px;
+        height: 300px;
+        margin: 30px auto;
+    }
+    li{
+        width: 100px;
+        height: 80px;
+        list-style: none;
+        text-align: center;
+        float: left;
+        background: #e2e2e2;
+        box-sizing: border-box;
+        cursor: pointer;
+
+    }
+    li.active{
+        color: red;
+        border: 1px solid #333;
+        background: #595959;
+
+    }
+    #container li h1{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+    #text{
+        width: 300px;
+        height: 100px;
+        background: #e2e2e2;
+        border: 1px solid #333;
+        margin: 30px auto;
+    }
+    </style>
+    <script>
+    // window.onload=function(){
+        
+
+    //     var ocontainer=document.getElementById('container')
+    //     var oli=document.getElementsByTagName('li')
+    //     var otext=document.getElementById('text')
+    //     for(var i=0; i<oli.length; i++){
+    //         var arr=[
+    //         '嘘嘘嘘否定别人的好吧',
+    //         '都会被热点话题九年',
+    //         'hbhdfrgsegvddh',
+    //     ]
+    //         oli[i].index=i
+    //         oli[i].onmouseover=function(){
+    //             for(var i=0; i<oli.length; i++ ){
+    //                 oli[i].className=''
+                    
+    //             }
+    //         this.className='active'
+    //         otext.innerHTML='<h2>' +(this.index+1) + '月几点睡啊</h2><p>'+arr[this.index]+'</p>'
+    //         };
+    //     }
+    // }
+    window.onload=function(){
+        var arr=[
+            '爱的胡，啊大家六年',
+            '是覅吃完了饭出苗率你',
+            '肯定还是你来试试看',
+            '开始接触不可接受v',
+            '是开发环境恶劣事件',
+        ]
+        var ocontainer=document.getElementById('container')
+        var oli=document.getElementsByTagName('li')
+        var otext=document.getElementById('text')
+        for(var i=0; i<oli.length; i++){
+            oli[i].index=i
+            oli[i].onmouseover=function(){
+                for(var i=0; i<oli.length; i++){
+                  oli[i] .className = ''
+                }
+                this.className='active'
+            
+            otext.innerHTML='<h1>' + (this.index+1) + '月到啦</h1><p>'+ arr[this.index] +'</p>'
+           } 
+        }
+    }
+    </script>
+</head>
+<body>
+    
+    <div id="container">
+        <ul>
+            <li class="active"><h1>一月</h1><p>January</p></li>
+            <li><h1>二月</h1><p>February</p></li>
+            <li><h1>三月</h1><p>March</p></li>
+            <li><h1>四月</h1><p>April</p></li>
+            <li><h1>五月</h1><p>May</p></li>
+            <li><h1>六月</h1><p>June</p></li>
+            <li><h1>七月</h1><p>July</p></li>
+            <li><h1>八月</h1><p>August</p></li>
+            <li><h1>九月</h1><p>September</p></li>
+            <li><h1>十月</h1><p>October</p></li>
+            <li><h1>十一月</h1><p>November</p></li>
+            <li><h1>十二月</h1><p>December</p></li>
+        </ul>
+        <div id="text"></div>
+    </div>
+</body>
+</html>

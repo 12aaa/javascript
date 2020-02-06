@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <textarea id="text1" cols="40" rows="10"></textarea>
+  <button id="btn">过滤</button>
+  <textarea id="text2" cols="40" rows="10"></textarea>
+  <script>
+    window.onload=function(){
+       var otext1=document.getElementById('text1')
+      var obtn=document.getElementById('btn')
+      var otext2=document.getElementById('text2')
+      obtn.onclick=function(){
+        var re=/淘宝|/
+        otext2.value=otext1.value.replace(re,'***')
+      }
+    }
+ 
+  </script>
+</body>
+</html>

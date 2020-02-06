@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+        var obtn=document.getElementById('btn')
+        var otab=document.getElementById('table')
+        var oname=document.getElementById('name')
+        var oedg=document.getElementById('edg')
+        var id=otab.tBodies[0].rows.length+1
+        obtn.onclick=function(){
+            var tr=document.createElement('tr')
+            
+            var td=document.createElement('td')
+            td.innerHTML=id++
+            tr.appendChild(td)
+
+            var td=document.createElement('td')
+            td.innerHTML=oname.value
+            tr.appendChild(td)
+
+            var td=document.createElement('td')
+            td.innerHTML=oedg.value
+            tr.appendChild(td)
+
+            var td=document.createElement('td')
+            td.innerHTML='<a href="javascript:;">删除</a>'
+            tr.appendChild(td)
+
+            td.getElementsByTagName('a')[0].onclick=function(){
+                otab.tBodies[0].removeChild(this.parentNode.parentNode)
+            }
+
+            otab.tBodies[0].appendChild(tr)
+        }
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="text" id="name">
+    <input type="text" id="edg">
+    <input type="button" id="btn" value="添加">
+    <table id="table" border="1" width=500px>
+        <thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>edg</td>
+            <td></td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>23</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>23</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>手动</td>
+                <td>67</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

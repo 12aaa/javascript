@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #parent{
+        width: 600px;
+        height: 20px;
+        background: #ccc;
+        position: relative;
+        margin: 20px auto;
+    }
+    #box{
+        width: 20px;
+        height: 20px;
+        background: red;
+        position: absolute;
+    }
+    #box1{
+        width: 300px;
+        height: 200px;
+        border: 1px solid #333;
+        position: relative;
+        overflow: hidden;
+    }
+    #box2{
+        padding: 4px;
+        position: absolute;
+    }
+    </style>
+    <script>
+    window.onload=function()
+    {
+        var obox=document.getElementById('box')
+        var obox1=document.getElementById('box1')
+        var obox2=document.getElementById('box2')
+        var oparent=document.getElementById('parent')
+        var disX=0
+        obox.onmousedown=function(e)
+        {
+            var e=e||event
+            disX=e.clientX-obox.offsetLeft
+
+
+            document.onmousemove=function(e)
+            {
+            var e=e||event
+            
+            var l=e.clientX-disX
+
+            if(l<0)
+            {
+               l=0
+            }
+            else if(l>oparent.offsetWidth-obox.offsetWidth)
+            {
+                l=oparent.offsetWidth-obox.offsetWidth
+            }
+            obox.style.left=l+'px'
+            var scall=l/(oparent.offsetWidth-obox.offsetWidth)
+            obox2.style.top=-scall*(obox2.offsetHeight-obox1.offsetHeight)+'px'
+            //document.title=l/580
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null
+                document.onmouseup=null
+            }
+            
+            return false
+        }
+    }        
+    
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <div id="box"></div>
+    </div>
+    <div id="box1">
+        <div id="box2">瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+            苣为了反抗测量范围南侧为KFC能看见瑟夫开车我看才能为苦苣为了反抗测量范围南侧为KFC能看见
+        </div>
+    </div>
+</body>
+</html>

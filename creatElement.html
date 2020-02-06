@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload=function(){
+        var obtn=document.getElementById('btn')
+        var oul=document.getElementById('ul')
+        var otext=document.getElementById('text')
+        var ali=document.getElementsByTagName('li')
+        obtn.onclick=function(){
+            var oli=document.createElement('li')
+            oli.innerHTML=otext.value
+            // oul.appendChild(oli)
+            oul.insertBefore(oli, ali[0])
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="text">
+    <input id="btn" type="button" value="按钮">
+    <ul id="ul">
+
+    </ul>
+</body>
+</html>
